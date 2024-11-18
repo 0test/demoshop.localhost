@@ -71,9 +71,9 @@
 
 <div class="container my-5">
     <div class="col-lg-12 col-12 px-0">
-        <h2>Relative:</h2>
+        <h2>Похожие товары:</h2>
         @if ($relative)
-        <section class="row mt-5">
+        <section class="row mt-2 row-cols-lg-5  row-cols-sm-3 row-cols-1">
             @foreach ($relative as $product)
             @include('parts.product_in_feed')
             @endforeach

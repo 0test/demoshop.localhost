@@ -6,13 +6,18 @@ if (!defined('MODX_BASE_PATH')) {
 //общая форма фильтра
 $tplFilterForm = '<form id="eFiltr" class="flex-column eFiltr eFiltr_form"  action="[+url+]" method="get">[+wrapper+]</form>';
 //кнопка "сброса" фильтра
-$tplFilterReset = '<div class="eFiltr_reset"><a class="btn btn-sm btn-outline-secondary" href="[+reset_url+]">Сбросить фильтр</a></div>';
+$tplFilterReset = '
+<div class="eFiltr_reset row">
+    <div class="col-12">
+        <a class="btn btn-sm btn-outline-secondary" href="[+reset_url+]">Сбросить фильтр</a>
+    </div>
+</div>';
 
 //название категории фильтра
 $filterCatName = '<div class="fltr_cat_zagol">[+cat_name+]</div>';
 
 $tplOuterCategory = '
-    <div class="filter_category pb-4 row row-cols-1 row-cols-lg-3">
+    <div class="filter_category pb-4 row row-cols-1 row-cols-lg-4">
         <!-- div class="fltr_name text-body-secondary title">[+cat_name+]</!-->
         [+wrapper+]
     </div>';
@@ -76,17 +81,17 @@ $tplOuterCheckbox = '
 //выпадающий список - селект
 $tplRowSelect = '<option value="[+value+]" [+selected+] [+disabled+]>[+name+] ([+count+])</option>';
 $tplOuterSelect = '
-	<div class="fltr_block fltr_block_select fltr_block[+tv_id+] [+active_block_class+]">
-		<span class="fltr_name fltr_name_select fltr_name[+tv_id+]">[+name+]</span>
-		<select name="f[[+tv_id+]][]">
-			<option value="0"> - [+name+] - </option>
-			[+wrapper+]
-		</select>
+	<div class="filter_block  [+active_block_class+]">
+		<div class="fltr_name mb-2 text-body-secondary fltr_name[+tv_id+]">[+name+]</div>
+        <div class="js-filter-block-content  ">
+            <select class="form-select" name="f[[+tv_id+]][]">
+                <option value="0"> - [+name+] - </option>
+                [+wrapper+]
+            </select>
+        </div>
 	</div>
 ';
 
-
-//диапазон
 //диапазон
 $tplRowInterval = '
 <div class="content slider js-filter-block-content js-slider" data-min="[+minval+]" data-max="[+maxval+]">
@@ -115,7 +120,25 @@ $tplOuterMultySelect = '
 		</select>
 	</div>
 ';
-
+//одиночный чекбокс
+$tplRowSingleCheckbox = '
+    <label class="[+disabled+]">
+        <input type="checkbox" name="f[[+tv_id+]]" value="[+value+]" [+selected+] [+disabled+]> [+name+] <span class="fltr_count">[+count+]</span>
+    </label>
+';
+$tplOuterSingleCheckbox = '
+    <div class="filter_block  fltr_block_checkbox fltr_block_single_checkbox fltr_block[+tv_id+] [+active_block_class+]" data-tv-name="[+tv_name+]">
+        <div class="fltr_name   mb-2 text-body-secondary">
+            [+name+]
+        </div>
+        <div class="js-filter-block-content checkboxes">
+            <div   class="" >
+                [+wrapper+]
+            </div>
+        </div>
+ 
+    </div>
+';
 //слайдер
 $tplRowSlider = '
 <div class="align-items-center d-flex mt-4">

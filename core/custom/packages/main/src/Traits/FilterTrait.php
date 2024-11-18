@@ -22,6 +22,7 @@ trait FilterTrait
 			'changeState' => 0,
 			'cfg' => 'custom',
             'activeBlockClass' => 'show',
+    
             
 		]);
 		$efilterForm = evo()->getPlaceholder('eFilter_form') ??  '';

@@ -47,7 +47,7 @@ trait CatalogTrait
             'addWhereList' => 'c.template = ' . evo()->getConfig('product_template_id'),    //  only products
             'paginate' => 'pages',
             'config' => 'paginate:custom',
-            'display' => 12,
+            'display' => 10,
         ]);
         $this->data['products'] = $result->getDocs();
         $this->data['pages'] = evolutionCMS()->getPlaceholder('pages');

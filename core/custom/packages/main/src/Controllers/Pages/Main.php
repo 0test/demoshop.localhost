@@ -16,8 +16,8 @@ class Main extends BaseController
             'parents' => evo()->getConfig('catalog_id'),
             'tvPrefix' => '',
             'tvList' => 'price,product_photo,in_stock',
-            'display' => 6,
-            'total' => 6,
+            'display' => 5,
+            'total' => 5,
             'depth' => 1,
             'addWhereList' => "c.template = " . evo()->getConfig('product_template_id'),    //  only products
             'api' => 1,

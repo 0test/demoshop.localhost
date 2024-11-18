@@ -24,5 +24,12 @@ class Catalog extends BaseController
          */
         $this->makeFilter();
         $this->getFilteredCatalog();
+
+        $this->data['count'] = evo()->getPlaceholder('eFilter_ids_cnt');
+        $this->data['current'] = evo()->getPlaceholder('current');
+        $this->data['from'] = evo()->getPlaceholder('from');
+        $this->data['to'] = evo()->getPlaceholder('to');
+        $this->data['totalPages'] = evo()->getPlaceholder('totalPages');
+ 
     }
 }

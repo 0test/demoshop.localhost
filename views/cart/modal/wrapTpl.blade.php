@@ -2,7 +2,9 @@
     <div class="offcanvas-header p-0">
         <div class="d-flex flex-grow-1 justify-content-between">
             <h5 class="offcanvas-title" id="offcanvasExampleLabel">Корзина</h5>
-            <a href="{{urlProcessor::makeUrl($data['settings']['cart_page_id'])}}" class="btn btn-primary btn-sm">К заказу</a>
+            @if ($data['count'])
+                <a href="@makeUrl($data['settings']['cart_page_id'])" class="btn btn-primary btn-sm">К заказу</a>
+            @endif
         </div>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 

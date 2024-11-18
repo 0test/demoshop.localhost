@@ -65,7 +65,7 @@ class Product  extends BaseController
             'tvList' => 'price,product_photo,in_stock',
             'returnDLObject' => 1,
             'addWhereList' => 'c.template = ' . evo()->getConfig('product_template_id'),    //  only products
-            'display' => 6,
+            'display' => 5,
         ]);
         return $result->getDocs();
     }
