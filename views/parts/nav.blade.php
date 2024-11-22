@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-black">
+<nav class="sticky-top navbar navbar-expand-lg navbar-dark bg-black">
     <div class="container">
         <a class="navbar-brand" href="/">
             <img src="@config('client_site_logo')" alt="Logo" width="30" height="24"

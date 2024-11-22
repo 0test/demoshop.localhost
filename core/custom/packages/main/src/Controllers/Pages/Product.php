@@ -12,7 +12,7 @@ class Product  extends BaseController
 
     public function setPageData()
     {
-        /* Можно и так
+       /*
         $val = evo()->getTemplateVars('*', '*', evo()->documentObject['id'], 1, 'category');
         $tvcategories = [9]; // Нужная категория твшек
         $tvexclude = [9]; // Исключение ТВ price
@@ -29,14 +29,18 @@ class Product  extends BaseController
 
         $brands = evo()->runSnippet("multiParams", array("parent" => "1"));
         $brands = $this->strToArray($brands);
+        $brand = evo()->documentObject['product_brand'][1] ?? '';
+
+
         $colors = evo()->runSnippet("multiParams", array("parent" => "2"));
         $colors = $this->strToArray($colors);
-
-        $brand = evo()->documentObject['product_brand'][1] ?? '';
-        $color = evo()->documentObject['product_color'][1] ?? '';
-
+        $colorValues = evo()->documentObject['product_color'][1] ?? '';
+        $colorValues = explode('||',$colorValues);
+        foreach($colorValues as $color){
+            $this->data['color_values'][] = array_key_exists($color, $colors) ? $colors[$color] : '';
+        }
         $this->data['brand_value'] = array_key_exists($brand, $brands) ? $brands[$brand] : '';
-        $this->data['color_value'] = array_key_exists($color, $colors) ? $colors[$color] : '';
+        
 
         $this->data['relative'] = $this->getRelativeProducts();
     }

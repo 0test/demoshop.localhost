@@ -40,7 +40,7 @@ trait FilterTrait
 			'api' => 1,
             'tvList' => 'price,product_photo,in_stock,product_brand,product_color',
 			'tvPrefix' => '',
-			'display' => 12,
+			'display' => 10,
 			'depth' => '4',
 			'paginate' => 'pages',
             'addWhereList' => 'c.template = ' . evo()->getConfig('product_template_id'),    //  only products
