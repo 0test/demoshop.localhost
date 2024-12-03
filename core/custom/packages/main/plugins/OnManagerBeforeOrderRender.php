@@ -22,14 +22,14 @@ Event::listen(['evolution.OnManagerBeforeOrderRender'], function ($params) {
     $params['groups']['contact']['fields']['phone'] = [
         'title'   => 'Телефон',
         'content' => function ($data) {
-            return $data['fields']['mobilephone'];
+            return $data['phone'];
         },
         'sort'    => 40,
     ];
     $params['groups']['contact']['fields']['name'] = [
         'title'   => 'Имя',
         'content' => function ($data) {
-            return $data['fields']['fullname'];
+            return $data['name'];
         },
         'sort'    => 50,
     ];
