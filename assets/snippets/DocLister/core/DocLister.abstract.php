@@ -1317,20 +1317,8 @@ abstract class DocLister
             'cleanIDs',
             2
         );
-        $out = [];
-        if (!is_array($IDs)) {
-            $IDs = explode($sep, $IDs ?? '');
-        }
-        foreach ($IDs as $item) {
-            $item = trim($item);
-            if (is_numeric($item) && (int) $item >= 0) { //Fix 0xfffffffff
-                $out[] = (int) $item;
-            }
-        }
-        $out = array_unique($out);
-        $this->debug->debugEnd("cleanIDs");
-
-        return $out;
+        
+        return APIHelpers::cleanIDs($IDs, $sep);
     }
 
     /**
